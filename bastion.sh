@@ -47,20 +47,20 @@ chmod +x ./kubectl
 mv kubectl /usr/local/bin/kubectl
 VALIDATE $? "kubectl installation"
 
-#helm installation
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
-VALIDATE $? "helm installation"
+# #helm installation
+# curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+# chmod 700 get_helm.sh
+# ./get_helm.sh
+# VALIDATE $? "helm installation"
 
-dnf install mysql -y
-VALIDATE $? "MySQL installation"
+# dnf install mysql -y
+# VALIDATE $? "MySQL installation"
 
-#namespace installation
-git clone https://github.com/ahmetb/kubectx /opt/kubectx
-ln -s /opt/kubectx/kubens /usr/local/bin/kubens
-VALIDATE $? "kubens installation"
+# #namespace installation
+# git clone https://github.com/ahmetb/kubectx /opt/kubectx
+# ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+# VALIDATE $? "kubens installation"
 
-# To create your kubeconfig file with the AWS CLI
-aws eks update-kubeconfig --region us-east-1 --name expense-dev
-VALIDATE $? "kube-config creation"
+# # To create your kubeconfig file with the AWS CLI
+# aws eks update-kubeconfig --region us-east-1 --name expense-dev
+# VALIDATE $? "kube-config creation"
